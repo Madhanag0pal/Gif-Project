@@ -1,5 +1,8 @@
 req = new XMLHttpRequest();
-//req.open('GET','https://api.giphy.com/v1/gifs/search?q=ryan gosling&api_key=ACZCYLfVTM5nFKRBsNQ1xPqVFHskmvGv&limit=5');
+
+//Sample Api call
+//req.open('GET','https://api.giphy.com/v1/gifs/search?api_key=ACZCYLfVTM5nFKRBsNQ1xPqVFHskmvGv&q=Dogs&limit=5');
+
 baseurl = 'https://api.giphy.com/v1/gifs/search?'
 
 apiKey = 'api_key=ACZCYLfVTM5nFKRBsNQ1xPqVFHskmvGv'
@@ -9,7 +12,7 @@ limit = 0
 search = "trending"
 
 function loadGif(){
-	api = baseurl+ apiKey +'&q='+search+'&rating=h&limit=8&offset='+String(limit);
+	api = baseurl+ apiKey +'&q='+search+'&rating=pg&limit=8&offset='+String(limit);
 
 	req.open('GET',api);
 
@@ -48,7 +51,7 @@ function serchGif(){
 	qry = document.getElementById("inp").value;
 	console.log(qry);
 	console.log(limit.to_int);
-	api = baseurl + apiKey +'&q='+qry+'&rating=h&limit='+String(limit)//+"&offset="+String(limit)
+	api = baseurl + apiKey +'&q='+qry+'&rating=pg&limit='+String(limit)//+"&offset="+String(limit)
 
 	// console.log(api)
 	req.open('GET',api);

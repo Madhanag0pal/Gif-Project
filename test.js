@@ -44,7 +44,6 @@ function loadGif(){
 	}
 	req.send();
 	limit += 8;
-
 }
 
 function serchGif(){

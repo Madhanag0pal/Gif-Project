@@ -53,7 +53,7 @@ function AppML(container, appsrc, appmlname) {
     this.orderByDirections = [];
     this.maxRecords = 0;
     this.data = {};
-    this.data.keyField = "";    
+    this.data.keyField = "";
     this.data.filteritems = [];
     this.data.sortitems = [];
     this.invokeAppML = function () {
@@ -81,7 +81,7 @@ function AppML(container, appsrc, appmlname) {
                         appmlObjects[count-1].controller = controller;
                     }
                }
-           } 
+           }
         }
         for (i = appmlObjects.length -1; i > -1; i -= 1) {
             if (appmlObjects[i].controller) {
@@ -118,7 +118,7 @@ function AppML(container, appsrc, appmlname) {
     };
     this.getData = function (nav, id) {
         var navigate = nav, fromrec, xmlhttp, xml = "", errmsg = null, i, cc, ext;
-        if (id) {this.appmlID = id; }       
+        if (id) {this.appmlID = id; }
         if (navigate === 1) {navigate = "first"; }
         if (!navigate || navigate === "") {navigate = "first"; }
         if (navigate === "first") {fromrec = 1; }
@@ -184,7 +184,7 @@ function AppML(container, appsrc, appmlname) {
           this.data = window[this.dataObject];
         }
         this.data.dateFormat = (this.data.dateFormat || "dd.mm.yyyy");
-        this.rowsperpage = (this.rowsperpage || this.data.rowsperpage); 
+        this.rowsperpage = (this.rowsperpage || this.data.rowsperpage);
         if (this.data.records) {
             this.data.itemNames = [];
             i = -1;
@@ -338,7 +338,7 @@ function AppML(container, appsrc, appmlname) {
           pos1 = pos1 + 1;
       }
         return rowClone;
-    };    
+    };
     this.replaceHTML = function (a, r, result, replaceFast) {
         var b, bb, l, lll, i, iii, iiii;
         if (a.hasAttributes()) {
@@ -454,7 +454,7 @@ function AppML(container, appsrc, appmlname) {
     this.disableFNPL = function (nav) {
         if (this.getElement("appmlbtn_" + nav)) {
             addClass(this.getElement("appmlbtn_" + nav), "disabled");
-            addClass(this.getElement("appmlbtn_" + nav), "w3-disabled");            
+            addClass(this.getElement("appmlbtn_" + nav), "w3-disabled");
             this.getElement("appmlbtn_" + nav).onclick = function () {return false; };
         }
     };
@@ -462,35 +462,35 @@ function AppML(container, appsrc, appmlname) {
         var obj = this;
         if (this.getElement("appmlbtn_" + nav)) {
             removeClass(this.getElement("appmlbtn_" + nav), "disabled");
-            removeClass(this.getElement("appmlbtn_" + nav), "w3-disabled");            
+            removeClass(this.getElement("appmlbtn_" + nav), "w3-disabled");
             this.getElement("appmlbtn_" + nav).onclick = function () {obj.fnpl(nav); };
         }
     };
     this.translate = function (txt) {
       var patt;
       patt = /APPML_ERR_USN_OR_PWD_REQ/g; txt = txt.replace(patt, "Username or password required");
-      patt = /APPML_ERR_ACTION_REQ/g; txt = txt.replace(patt, "Action required");      
-      patt = /APPML_ERR_MODEL_REQ/g; txt = txt.replace(patt, "Model required");      
+      patt = /APPML_ERR_ACTION_REQ/g; txt = txt.replace(patt, "Action required");
+      patt = /APPML_ERR_MODEL_REQ/g; txt = txt.replace(patt, "Model required");
       patt = /APPML_ERR_MODEL_ERR/g; txt = txt.replace(patt, "Error in Model");
       patt = /APPML_ERR_NO_LOGIN/g; txt = txt.replace(patt, "You are not logged in");
-      patt = /APPML_ERR_NOT_AUTHORIZED/g; txt = txt.replace(patt, "You are not authorized to perform this action");      
-      patt = /APPML_ERR_DATASOURCE_REQ/g; txt = txt.replace(patt, "Datasource required");      
-      patt = /APPML_ERR_KEYFIELD_REQ/g; txt = txt.replace(patt, "Keyfield required");      
-      patt = /APPML_ERR_MAINTABLE_REQ/g; txt = txt.replace(patt, "Maintable required");      
-      patt = /APPML_ERR_ILLEGAL_ACTION/g; txt = txt.replace(patt, "Illegal action");      
-      patt = /APPML_ERR_DATAMODEL/g; txt = txt.replace(patt, "Error in datamodel");      
-      patt = /APPML_ERR_INPUT_MIN/g; txt = txt.replace(patt, "Minimum value error");      
-      patt = /APPML_ERR_INPUT_MAX/g; txt = txt.replace(patt, "Maximum value error");      
-      patt = /APPML_ERR_INPUT_REQ/g; txt = txt.replace(patt, "Required value error");      
-      patt = /APPML_ERR_ILLEGAL_QUERY/g; txt = txt.replace(patt, "Illegal query error");      
-      patt = /APPML_ERR_UKNOWN_DB/g; txt = txt.replace(patt, "Unknown database");      
-      patt = /APPML_ERR_UKNOWN_DB_FIELD/g; txt = txt.replace(patt, "Unknown database field");      
-      patt = /APPML_ERR_INVALID_KEY/g; txt = txt.replace(patt, "Invalid key");      
-      patt = /APPML_ERR_ERROR/g; txt = txt.replace(patt, "Error");      
-      patt = /APPML_MESSAGE_RECORD_UPDATED/g; txt = txt.replace(patt, "Record updated");      
+      patt = /APPML_ERR_NOT_AUTHORIZED/g; txt = txt.replace(patt, "You are not authorized to perform this action");
+      patt = /APPML_ERR_DATASOURCE_REQ/g; txt = txt.replace(patt, "Datasource required");
+      patt = /APPML_ERR_KEYFIELD_REQ/g; txt = txt.replace(patt, "Keyfield required");
+      patt = /APPML_ERR_MAINTABLE_REQ/g; txt = txt.replace(patt, "Maintable required");
+      patt = /APPML_ERR_ILLEGAL_ACTION/g; txt = txt.replace(patt, "Illegal action");
+      patt = /APPML_ERR_DATAMODEL/g; txt = txt.replace(patt, "Error in datamodel");
+      patt = /APPML_ERR_INPUT_MIN/g; txt = txt.replace(patt, "Minimum value error");
+      patt = /APPML_ERR_INPUT_MAX/g; txt = txt.replace(patt, "Maximum value error");
+      patt = /APPML_ERR_INPUT_REQ/g; txt = txt.replace(patt, "Required value error");
+      patt = /APPML_ERR_ILLEGAL_QUERY/g; txt = txt.replace(patt, "Illegal query error");
+      patt = /APPML_ERR_UKNOWN_DB/g; txt = txt.replace(patt, "Unknown database");
+      patt = /APPML_ERR_UKNOWN_DB_FIELD/g; txt = txt.replace(patt, "Unknown database field");
+      patt = /APPML_ERR_INVALID_KEY/g; txt = txt.replace(patt, "Invalid key");
+      patt = /APPML_ERR_ERROR/g; txt = txt.replace(patt, "Error");
+      patt = /APPML_MESSAGE_RECORD_UPDATED/g; txt = txt.replace(patt, "Record updated");
       patt = /APPML_MESSAGE_RECORD_ADDED/g; txt = txt.replace(patt, "Record added");
       patt = /APPML_MESSAGE_RECORD_DELETED/g; txt = txt.replace(patt, "Record deleted");
-      patt = /APPML_MESSAGE_OF/g; txt = txt.replace(patt, "of");      
+      patt = /APPML_MESSAGE_OF/g; txt = txt.replace(patt, "of");
       return txt;
     };
     this.displayMessage = function (txt) {
@@ -524,7 +524,7 @@ function AppML(container, appsrc, appmlname) {
             if (window[this.controller](this) == -1) {return -1; }
         }
         if (action === "UPDATE") {
-            if (this.data.records[0][this.data.keyField] === "") {action = "ADD"; }            
+            if (this.data.records[0][this.data.keyField] === "") {action = "ADD"; }
         }
     this.app = {};
     this.app.action = action;
@@ -828,7 +828,7 @@ function AppML(container, appsrc, appmlname) {
         x = this.getElement("appmlquery").getElementsByTagName("SELECT");
         l = x.length;
         for (i = 0; i < l; i += 1) {
-            if (x[i].id.substr(0, 12) === "appml_query_") {            
+            if (x[i].id.substr(0, 12) === "appml_query_") {
                 if (x[i].getAttribute("reset") !== "no") {x[i].value = ""; }
             }
         }
@@ -849,7 +849,7 @@ function AppML(container, appsrc, appmlname) {
         this.queryDisplayValues[l] = value;
         this.queryOperators[l] = 0;
         this.queryDisplayOperators[l] = 0;
-        this.data.totalRecCounter = 0;        
+        this.data.totalRecCounter = 0;
     };
     this.clearQuery = function () {
         this.queryFields = [];
@@ -858,7 +858,7 @@ function AppML(container, appsrc, appmlname) {
         this.queryTypes = [];
         this.queryOperators = [];
         this.queryDisplayOperators = [];
-        this.data.totalRecCounter = 0;        
+        this.data.totalRecCounter = 0;
     };
     this.adoptQuery = function (adoptObj) {
         this.queryFields = adoptObj.queryFields;
@@ -869,7 +869,7 @@ function AppML(container, appsrc, appmlname) {
         this.queryDisplayOperators = adoptObj.queryDisplayOperators;
         this.orderBys = adoptObj.orderBys;
         this.orderByDirections = adoptObj.orderByDirections;
-        this.data.totalRecCounter = 0;        
+        this.data.totalRecCounter = 0;
     };
     this.query = function (field, value, type) {
         this.setQuery(field, value, type);
